@@ -61,11 +61,11 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="5" x="0.5825" y="0.6068548387096774" useARA="0" uiLastX_Normal="40"
-          uiLastY_Normal="119" uiopen_Normal="0">
+  <FILTER uid="5" x="0.5825" y="0.6068548387096774" useARA="0" uiLastX_Normal="56"
+          uiLastY_Normal="251" uiopen_Normal="0">
     <PLUGIN name="SimpleEQ" format="VST3" category="Fx" manufacturer="yourcompany"
             version="1.0.0" file="C:\Users\hp\Desktop\audio-plugin\SimpleEQ\Builds\VisualStudio2022\x64\Debug\VST3\SimpleEQ.vst3\Contents\x86_64-win\SimpleEQ.vst3"
-            uniqueId="5a9e029" isInstrument="0" fileTime="196c4e96c38" infoUpdateTime="196c98e31a2"
+            uniqueId="5a9e029" isInstrument="0" fileTime="196c4e96c38" infoUpdateTime="196c9b65752"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e95c3ea8"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
@@ -84,7 +84,7 @@
             version="1.0.0" file="AudioPluginDemo" uniqueId="4d00ec0c" isInstrument="0"
             fileTime="0" infoUpdateTime="0" numInputs="2" numOutputs="2"
             isShell="0" hasARAExtension="0" uid="4d00ec0c"/>
-    <STATE>174.VMjLgTJ....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOyQWXzUlO7.UPRETSfjFY8HBYkwVX4IBH1EFa0UVOh.iK0HxK9vCTAIUPMARZj0iHmEVZtIBH1EFa0UVOh.iK3jSN4jSN4biMwTCNwPiLwHxK9vScoMEcgQWYfbWZjQGZ8HBMv.iHffVYocFZz0iHx.CLh7hO77xbzEFck4C.</STATE>
+    <STATE>174.VMjLgTJ....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOyQWXzUlO7.UPRETSfjFY8HBYkwVX4IBH1EFa0UVOh.iK4PCL0HCL0fCM0fyLxfiL0HxK9vCTAIUPMARZj0iHmEVZtIBH1EFa0UVOhDiKvHxK9vScoMEcgQWYfbWZjQGZ8HBMv.iHffVYocFZz0iHx.CLh7hO77xbzEFck4C.</STATE>
     <LAYOUT>
       <INPUTS>
         <BUS index="0" layout="L R"/>
