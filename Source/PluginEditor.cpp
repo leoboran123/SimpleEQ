@@ -367,7 +367,7 @@ void ResponseCurveComponent::resized()
         20,30,40,50,100,
         200,300,400,500,1000,
         2000,3000,4000,5000,10000,
-        20000,30000,40000,50000,100000,
+        20000
 
     };
 
@@ -385,8 +385,9 @@ void ResponseCurveComponent::resized()
     for (auto f : freqs)
     {
         auto normX = mapFromLog10(f, 20.f, 20000.f);
+
         
-        xs.add(left + width * normX, 0.f, getHeight());
+        xs.add(left + width * normX);
     
     }
 
@@ -413,7 +414,66 @@ void ResponseCurveComponent::resized()
         g.drawHorizontalLine(y, left, right);
     }
 
-    //g.drawRect(getAnalysisArea());
+  /*  g.setColour(Colours::red);
+    g.drawRect(getAnalysisArea());
+
+    g.setColour(Colours::blue);
+    g.drawRect(getRenderArea());*/
+
+    g.setColour(Colours::lightgrey);
+    
+
+    for (int i = 0; i < freqs.size(); i++)
+    {
+        auto f = freqs[i];
+        auto x = xs[i];
+        String fr = std::to_string(f);
+
+        int fontHeigth = 10;
+
+        if (fr[0] == 3 || fr[0] == 4)
+        {
+            fontHeigth = 2;
+
+        }
+
+        g.setFont(fontHeigth);
+
+       
+
+        auto normX = mapFromLog10(f, 20.f, 20000.f);
+
+        bool addK = false;
+
+        String str;
+
+        if (f > 999.f)
+        {
+            addK = true;
+            f /= 1000.f;
+        }
+        
+        str << f;
+
+        if (addK == true)
+        {
+            str << "k";
+        }
+        str << "Hz";
+
+        auto textWidth = g.getCurrentFont().getStringWidth(str);
+
+
+
+        Rectangle<int> r;
+        r.setSize(textWidth, fontHeigth);
+        r.setCentre(x, 0);
+        r.setY(1);
+       
+
+        g.drawFittedText(str, r, juce::Justification::centred, 1);
+
+    }
 
 }
 
@@ -427,7 +487,7 @@ juce::Rectangle<int> ResponseCurveComponent::getRenderArea()
     bounds.removeFromBottom(2);
     bounds.removeFromLeft(20);
     bounds.removeFromRight(20);
-
+    
     return bounds;
 }
 
@@ -437,6 +497,8 @@ juce::Rectangle<int> ResponseCurveComponent::getAnalysisArea()
     
     bounds.removeFromTop(4);
     bounds.removeFromBottom(4);
+    bounds.removeFromLeft(1);
+    bounds.removeFromRight(1);
 
     return bounds;
 }
