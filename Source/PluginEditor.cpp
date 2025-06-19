@@ -409,16 +409,11 @@ void ResponseCurveComponent::resized()
     for (auto gDb : gain)
     {
         auto y = jmap(gDb, -24.f, 24.f, float(bottom), float(top));
-        //g.drawHorizontalLine(y, 0, getWidth());
         g.setColour(gDb == 0.f ? Colour(0u, 172u, 1u) : Colours::darkgrey);
         g.drawHorizontalLine(y, left, right);
     }
 
-  /*  g.setColour(Colours::red);
-    g.drawRect(getAnalysisArea());
-
-    g.setColour(Colours::blue);
-    g.drawRect(getRenderArea());*/
+  
 
     g.setColour(Colours::lightgrey);
     
@@ -504,6 +499,19 @@ void ResponseCurveComponent::resized()
 
         g.drawFittedText(str, r, juce::Justification::centred, 1);
 
+        str.clear();
+
+        str << (gDb - 24.f);
+
+        r.setX(1);
+
+        textWidth = g.getCurrentFont().getStringWidth(str);
+        r.setSize(textWidth, fontHeigth);
+        g.setColour(Colours::lightgrey);
+        g.drawFittedText(str, r, juce::Justification::centred, 1);
+
+
+
     }
 
 
@@ -512,8 +520,6 @@ void ResponseCurveComponent::resized()
 juce::Rectangle<int> ResponseCurveComponent::getRenderArea()
 {
     auto bounds = getLocalBounds();
-
-    //bounds.reduce(10, 8);
 
     bounds.removeFromTop(12);
     bounds.removeFromBottom(2);
