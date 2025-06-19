@@ -433,7 +433,7 @@ void ResponseCurveComponent::resized()
 
         if (fr[0] == 3 || fr[0] == 4)
         {
-            fontHeigth = 2;
+            fontHeigth = 1;
 
         }
 
@@ -473,7 +473,39 @@ void ResponseCurveComponent::resized()
 
         g.drawFittedText(str, r, juce::Justification::centred, 1);
 
+
     }
+
+
+
+    for (auto gDb : gain)
+    {
+        auto y = jmap(gDb, -24.f, 24.f, float(bottom), float(top));
+        int fontHeigth = 10;
+
+        String str;
+
+        if (gDb > 0)
+        {
+            str << "+";
+        }
+
+        str << gDb;
+
+        auto textWidth = g.getCurrentFont().getStringWidth(str);
+
+        Rectangle<int> r;
+        r.setSize(textWidth, fontHeigth);
+        r.setX(getWidth() - textWidth);
+        r.setCentre(r.getCentreX(), y);
+
+        g.setColour(gDb == 0.f ? Colour(0u, 172u, 1u) : Colours::lightgrey);
+
+
+        g.drawFittedText(str, r, juce::Justification::centred, 1);
+
+    }
+
 
 }
 
